@@ -10,9 +10,8 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - welcome/run
-      - print_hello
-      - print_world
-       build:
-         docker:
-           - image: circleci/node:13.8.0
+      build:
+        docker:
+          - image: circleci/node:13.8.0
+        steps:
+        #  ...  other config

@@ -1,12 +1,8 @@
-# This code is licensed from CircleCI to the user under the MIT license.
-# See here for details: https://circleci.com/developer/orbs/licensing
 version: 2.1
-
-commands:
-  hello-world:
-    parameters:
-      greeting:
-        type: string
-        default: "world"
+jobs:
+  build:
+    docker: 
+      - image: circleci/node:13.8.0 # the primary container, where your job's commands are run
     steps:
-      - run: echo "hello << parameters.greeting >>"
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
